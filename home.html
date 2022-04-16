@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessr. | Home</title>
+    <link rel="stylesheet" href="introstyle.css">
+</head>
+<body>  
+        <h1>Welcome to Guessr.</h1>
+        <h1>Choose your level.</h1>
+        <h2 id="pointsEarned">Points Earned: 0</h2>
+        <div class="container">
+            <div>
+                <img id="img1"src="imgs/level1.png" onclick="document.location = 'level1/level1.html'"  alt="">
+                <h2 id="h2l1">Beginner</h2>
+            </div>
+            <div>
+                <img id="img2" src="imgs/level2.png" onclick="document.location = 'level2/level2.html'" alt="">
+                <h2 id="h2l2">Intermediate</h2>
+            </div>
+            <div>
+                <img id="img3" src="imgs/level3.png" onclick="document.location = 'level3/level3.html'" alt="">
+                <h2 id="h2l3">Professional</h2>
+            </div>
+            <div>
+                <img id="img4" src="imgs/level4.png" onclick="document.location = 'level4/level4.html'" alt="">
+                <h2 id="h2l4">Wheel of Fortune</h2>
+            </div>
+        </div>
+        <h2 id="practiceMode">Or study in <a href="/practice.html">Practice Mode</a></h2>
+        <script src="inroapp.js"></script>
+</body>
+</html>

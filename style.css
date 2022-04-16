@@ -1,0 +1,281 @@
+body{
+    color: white;
+    background: url(imgs/earth.jpg)no-repeat center center fixed;
+    background-repeat: none;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    --level1-bg-img: url(imgs/earth.jpg)no-repeat center center fixed;
+    --level2-bg-img: url(imgs/sun.jpeg)no-repeat center center fixed;
+    --level3-bg-img: url(imgs/mars.jpeg)no-repeat center center fixed;
+    --level4-bg-img: linear-gradient(to right, #6a3093, #a044ff);;
+}
+
+body a{
+    text-decoration: none;
+    color: white;
+    background: #ffffff85;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50px;
+    margin: 20px;
+    font-size: 15px;
+}
+  
+#h1{
+    font-size: 50px;
+    filter: drop-shadow(5px 0px 10px blue);
+}
+
+ 
+button{
+    background-color: rgb(24, 109, 219);
+    filter: drop-shadow(0 0 20px blue);
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    transition: 0.5s;
+    color: white;
+    margin: 20px;
+    font-weight: bold;
+}
+
+input{
+    filter: drop-shadow(0 0 20px blue);
+    width: 400px;
+    height: 40px;
+    border-radius: 0.8rem;
+    border: none;
+    background: rgb(24, 109, 219);
+    display: none;
+    color: white;
+}
+
+input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+}
+
+button:hover{
+    background-color: rgb(34, 207, 167);
+    filter: drop-shadow(0 0 20px lightgreen);
+    color: black;
+}
+
+#modal{
+    padding: 1em;
+    max-width: 58ch;
+    background: linear-gradient(to right, #0575e6, #021b79);
+    color: white;
+    border-radius: 2rem;
+    filter: drop-shadow(0 0 10px rgb(7,46,37));
+}
+
+#modal button{
+    color: white;
+}
+
+#modal button:hover{
+    cursor: pointer;
+    color: white;
+}
+
+#modal::backdrop{
+    background-color: gray;
+    opacity: 0.5;
+}
+
+body input:focus, body button:focus{
+    outline: none;
+    border: 5px solid rgb(86, 139, 255);
+}
+
+.correctW{
+    color: rgb(23, 167, 47);
+    text-decoration: underline;
+}
+
+.incorrectW{
+    color: rgb(167, 23, 23);
+    text-decoration: line-through;
+}
+
+/* Level 2 */
+
+#l2Body #h1{
+    font-size: 50px;
+    filter: drop-shadow(5px 0px 10px rgb(255, 230, 0));
+}
+
+#l2Body{
+    background: var(--level2-bg-img);
+    background-size: cover;
+}
+
+#l2Body button{
+    background-color: rgb(255, 196, 4);
+    filter: drop-shadow(0 0 20px rgb(255, 196, 4));
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    transition: 0.5s;
+    color: black;
+    margin: 20px;
+}
+
+#l2Body button:hover{
+    background-color: rgb(248, 141, 0);
+    filter: drop-shadow(0 0 20px orange);
+    color: black;
+}
+
+#l2Body input{
+    filter: drop-shadow(0 0 20px rgb(255, 196, 4));
+    width: 400px;
+    height: 40px;
+    border-radius: 0.8rem;
+    border: none;
+    background: rgb(255, 196, 4);
+    display: none;
+    color: black;
+}
+
+#l2Body input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+}
+
+#l2Body input:focus, #l2Body button:focus{
+    outline: none;
+    border: 5px solid rgb(255, 224, 86);
+}
+
+#l2Body #modal{
+    background: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+/* Level 3 */
+
+#l3Body #h1{
+    font-size: 50px;
+    filter: drop-shadow(5px 0px 10px rgb(255, 0, 0));
+}
+
+#l3Body{
+    background: var(--level3-bg-img);
+    background-size: cover;
+}
+
+#l3Body button{
+    background-color: rgb(219, 53, 24);
+    filter: drop-shadow(0 0 20px rgb(255, 0, 0));
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    transition: 0.5s;
+    color: white;
+    margin: 20px;
+}
+
+#l3Body button:hover{
+    background-color: rgb(254,198,101);
+    filter: drop-shadow(0 0 20px lightyellow);
+    color: black;
+}
+
+#l3Body input{
+    filter: drop-shadow(0 0 20px red);
+    width: 400px;
+    height: 40px;
+    border-radius: 0.8rem;
+    border: none;
+    background: rgb(219, 53, 24);
+    display: none;
+    color: white;
+}
+
+#l3Body input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+}
+
+#l3Body input:focus, #l3Body button:focus{
+    outline: none;
+    border: 5px solid rgb(255, 86, 86);
+}
+
+#l3Body #modal{
+    background: linear-gradient(to right, #ed213a, #93291e);
+}
+
+/* Level 4 */
+
+#l4Body #h1{
+    font-size: 50px;
+    filter: drop-shadow(5px 0px 10px rgb(132, 0, 255));
+}
+
+#l4Body{
+    background: var(--level4-bg-img);
+    background-size: cover;
+}
+
+#l4Body button{
+    background-color: rgb(154, 65, 255);
+    filter: drop-shadow(0 0 20px rgb(132,0,255));
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    transition: 0.5s;
+    color: white;
+    margin: 20px;
+}
+
+#l4Body button:hover{
+    background-color: rgb(254, 101, 246);
+    filter: drop-shadow(0 0 20px pink);
+    color: white;
+}
+
+#l4Body input{
+    filter: drop-shadow(0 0 20px rgb(132,0,255));
+    width: 400px;
+    height: 40px;
+    border-radius: 0.8rem;
+    border: none;
+    background: rgb(154, 65, 255);
+    display: none;
+    color: white;
+}
+
+#l4Body input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+}
+
+#l4Body input:focus, #l4Body button:focus{
+    outline: none;
+    border: 5px solid #6a3093;
+}
+
+#l4Body #modal{
+    background: linear-gradient(to right, #9d50bb, #6e48aa);
+}
+
+img{
+    width: 300px;
+    height: 300px;
+    transition: 2s;
+    margin: 0;
+    margin-top: 40px;
+}
+
+a{
+    clip-path: (0% 100%, 50% 0%, 100% 100%);
+}
