@@ -130,4 +130,7 @@ iframe{
         display: block;
         color: white;
     }
+    #pointsEarned{
+        display: block;
+    }
 }
