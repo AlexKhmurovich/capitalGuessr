@@ -6,14 +6,12 @@ let modal = document.getElementById("modal");
 let presentModal = document.getElementById("howToPlay");
 let closeModal = document.getElementById("closeModal");
 let timeText = document.getElementById("timeLeft");
-// let pointsLabel = document.getElementById("pointsEarned");
 let wheel = document.getElementById("wheel");
 let score = 1;
 let randomIndex = 0;
 var rot = 360;
 let audio = new Audio("../music/level4.mp3")
 audio.loop = true
-
 spinBtn.innerHTML = "Spin"
 
 let countryDictionary = {
