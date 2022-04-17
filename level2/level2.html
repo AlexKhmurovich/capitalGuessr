@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+  <title>Guessr. | Level 2</title>
+</head>
+
+<body id="l2Body">
+  <div>
+    <h1 id="h1">LEVEL 2</h1>
+    <h1 id="scoreh1">Score: 0</h1>
+    <h1 id="timeLeft">01:33</h1>
+    <a href="/home.html">Main Menu</a>
+    <div></div>
+    <button id="guess">Guess</button>
+    <input type="text" placeholder="Name the capital..." id="txtBox">
+    <button id="howToPlay">How to Play?</button>
+  </div>
+
+  <dialog id="modal">
+      <h1>How to play?</h1>
+      <p>
+        Level 2 is for people who are good at geography but still need some practice. Like in Level 1, you get a point for each correct answer.
+        You have to guess 7 capitals in order to win this round.
+      </p>
+      <h3 class="correctW">Andorra la Vella</h3>
+      <h3 class="incorrectW">andorra la vella</h3>
+      <h3 class="incorrectW">ANDORRA LA VELLA</h3>
+      <h3 class="incorrectW">AndorralaVella</h3>
+      <button id="closeModal">OK</button>
+  </dialog>
+
+
+
+
+  <script src="level2.js"></script>
+</body>
+
+
+</html>
