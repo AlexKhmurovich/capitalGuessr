@@ -12,8 +12,8 @@ let audio = new Audio("../music/level1.mp3")
 audio.loop = true
 
 
-
-guessBtn.innerHTML = "Start"
+let reptIndexes = [];
+guessBtn.innerHTML = "Start";
 
 let countryDictionary = {
   // "Afghanistan": "Kabul",
@@ -217,16 +217,15 @@ function updateCountry(){
   randomIndex = Math.floor(Math.random() * countryCount);
   let randCountry = Object.keys(countryDictionary)[randomIndex];
   heading.innerHTML = `Name the capital of ${randCountry}`;
- if (score == 10){
-    heading.innerHTML = "You Won";
-    guessBtn.innerHTML = "Play Again";
-    textBox.style.display = "none";
-    let intScore = parseInt(localStorage.userScore);
-    intScore += score;
-    localStorage.setItem("userScore", intScore);
-    score = 1
-  }
-  console.log(countryCount)
+    if (score == 10){
+      heading.innerHTML = "You Won";
+      guessBtn.innerHTML = "Play Again";
+      textBox.style.display = "none";
+      let intScore = parseInt(localStorage.userScore);
+      intScore += score;
+      localStorage.setItem("userScore", intScore);
+      score = 1
+    }
 }
 
 function triggerAction(){
@@ -247,13 +246,11 @@ function triggerAction(){
 guessBtn.onclick = function(){
   triggerAction()
   audio.play()
-  textBox.focus()
 }
 
 document.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
       triggerAction()
       audio.play()
-      textBox.focus()
   }
 });

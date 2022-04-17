@@ -247,7 +247,6 @@ function triggerAction(){
 guessBtn.onclick = function(){
   triggerAction()
   audio.play()
-  textBox.focus()
 }
 
 
@@ -255,6 +254,5 @@ document.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
       triggerAction()
       audio.play()
-      textBox.focus()
   }
 });

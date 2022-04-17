@@ -233,7 +233,6 @@ function triggerWheel(){
 spinBtn.onclick = function(){
     triggerWheel()
     audio.play()
-    textBox.focus()
 }
 
 
@@ -272,6 +271,5 @@ document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         audio.play()
         triggerWheel()
-        textBox.focus()
     }
 });
