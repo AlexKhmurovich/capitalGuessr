@@ -84,6 +84,7 @@ iframe{
 
 #practiceMode a, #practiceMode{
     color: white;
+    text-shadow: 0 0 10px black;
 }
 
 #practiceBody a{
@@ -93,6 +94,7 @@ iframe{
 
 #howToPlayA{
     color: white;
+    text-shadow: 0 0 10px black;
 }
 
 @media screen and (max-width: 925px){
