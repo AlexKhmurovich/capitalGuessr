@@ -251,18 +251,12 @@ guessBtn.onclick = function(){
   textBox.focus()
 }
 
-presentModal.addEventListener("click", () => {
-  modal.showModal();
-})
-
-closeModal.addEventListener("click", () => {
-  modal.close();
-})
 
 document.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-      triggerAction()
-      audio.play()
-      textBox.focus()
+  if (event.key === "Enter") {
+    console.log("enter pressed")
+    triggerAction()
+    audio.play()
+    textBox.focus()
   }
 });
