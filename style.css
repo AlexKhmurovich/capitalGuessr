@@ -93,14 +93,8 @@ body input:focus, body button:focus{
     border: 5px solid rgb(86, 139, 255);
 }
 
-.correctW{
-    color: rgb(23, 167, 47);
-    text-decoration: underline;
-}
-
-.incorrectW{
-    color: rgb(167, 23, 23);
-    text-decoration: line-through;
+input{
+    margin-top: 20px;
 }
 
 /* Level 2 */
