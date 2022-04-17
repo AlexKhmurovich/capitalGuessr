@@ -279,3 +279,12 @@ img{
 a{
     clip-path: (0% 100%, 50% 0%, 100% 100%);
 }
+
+@media screen and (max-width: 925px) {
+    #modal{
+        display: none;
+    }
+    #howToPlay{
+        display: none;
+    }
+}

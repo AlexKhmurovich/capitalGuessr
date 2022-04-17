@@ -91,6 +91,10 @@ iframe{
     color: white;
 }
 
+#howToPlayA{
+    display: none;
+}
+
 @media screen and (max-width: 925px){
     h1{
         font-size: 30px;
@@ -121,5 +125,9 @@ iframe{
         width: 300px;
         height: 700px;
         margin-top: 15px;
+    }
+    #howToPlayA{
+        display: block;
+        color: white;
     }
 }
