@@ -275,13 +275,3 @@ document.addEventListener("keyup", function(event) {
         textBox.focus()
     }
 });
-
-
-presentModal.addEventListener("click", () => {
-  modal.showModal();
-})
-
-closeModal.addEventListener("click", () => {
-  modal.close();
-})
-
