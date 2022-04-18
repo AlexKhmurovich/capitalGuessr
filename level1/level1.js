@@ -230,8 +230,10 @@ function updateCountry(){
 
 function triggerAction(){
   textBox.style.display = "inline";
-  guessBtn.innerHTML = "Guess"
-  if (textBox.value == countryDictionary[Object.keys(countryDictionary)[randomIndex]]){
+  guessBtn.innerHTML = "Guess";
+  let correctAnswer = countryDictionary[Object.keys(countryDictionary)[randomIndex]];
+  let userAnswerCap = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1);
+  if (userAnswerCap == correctAnswer){
     score ++
     scoreText.innerHTML = `Score: ${score}`
     textBox.value = ""

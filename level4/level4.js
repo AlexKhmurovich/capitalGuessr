@@ -216,7 +216,9 @@ function triggerWheel(){
     rot += 360;
     spinBtn.innerHTML = "Guess"
     textBox.style.display = "inline";
-    if (textBox.value == countryDictionary[Object.keys(countryDictionary)[randomIndex]]){
+    let correctAnswer = countryDictionary[Object.keys(countryDictionary)[randomIndex]];
+    let userAnswerCap = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1);
+    if (userAnswerCap == correctAnswer){
         score ++
         scoreText.innerHTML = `Score: ${score}`
         textBox.value = ""
