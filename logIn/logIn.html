@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="765076479218-ii2kq3kgu65lp057k2qi1ftpq5p2hqbm.apps.googleusercontent.com">
     <title>Guessr. Log In</title>
 </head>
 <body>
-    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <div id="g_id_onload"
          data-client_id="765076479218-ii2kq3kgu65lp057k2qi1ftpq5p2hqbm.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
+         data-callback="onSignIn">
     </div>
-    <div class="g_id_signin" data-type="standard"></div> -->
-    <!-- <script src="logIn.js"></script> -->
+    <div class="g_id_signin" data-type="standard"></div>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
         function onSignIn(googleUser) {
