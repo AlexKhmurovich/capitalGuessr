@@ -249,21 +249,14 @@ function updateCountry(){
       heading.innerHTML = "You Lost"
       spinBtn.innerHTML = "Spin"
       textBox.style.display = "none"
-      let intScore = parseInt(localStorage.userScore);
-      intScore += score;
-      localStorage.setItem("userScore", intScore);
       score = 1
-      scoreText.innerHTML = `Score: ${score}`
+      scoreText.innerHTML = "Score: 0"
     } else if (score == 7){
         heading.innerHTML = "You Won";
-        guessBtn.innerHTML = "Play Again";
         textBox.style.display = "none";
-        spinBtn.innerHTML = "Spin"
-        let intScore = parseInt(localStorage.userScore);
-        intScore += score;
-        localStorage.setItem("userScore", intScore);
+        spinBtn.innerHTML = "Play Again"
         score = 1
-        scoreText.innerHTML = `Score: ${score}`
+        scoreText.innerHTML = "Score: 0"
       }
 }
 
@@ -271,7 +264,7 @@ function updateCountry(){
 // When enter or return is pressed does the same thing as spin button
 document.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
-        audio.play()
-        triggerWheel()
+      triggerWheel()
+      audio.play()
     }
 });

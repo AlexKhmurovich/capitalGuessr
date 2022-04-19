@@ -4,32 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="logIn.css">
     <title>Guessr. Log In</title>
 </head>
 <body>
-    <!-- Sign In With Google -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-         data-client_id="765076479218-ii2kq3kgu65lp057k2qi1ftpq5p2hqbm.apps.googleusercontent.com"
-         data-onsuccess="onSignIn">
-    </div>
-    <div class="g_id_signin" data-type="standard"></div>
-    <img id="img" src="" alt="">
-    <h1 id="h1">User Name</h1>
-
-    <script>
-        let h1 = document.getElementById("h1");
-        let img = document.getElementById("img");
-        function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        h1.innerHTML = profile.getName();
-        img.src = profile.getImageUrl();
-    }
-
-    </script>
+    <div id="logIN">
+        <h1>Log In</h1>
+        <input type="text"> <br>
+        <input type="password"> <br>
+        <button>Sign In</button>
+      </div>
+      
+      <h3>Or</h3>
+      
+      <div id="gDIV">
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <div id="g_id_onload"
+           data-client_id="YOUR_CLIENT_ID"
+           data-callback="handleCredentialResponse">
+      </div>
+      <div class="g_id_signin" data-type="standard"></div>
+      </div>      
 </body>
 </html>
