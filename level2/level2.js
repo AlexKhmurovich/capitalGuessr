@@ -225,6 +225,7 @@ function updateCountry(){
     intScore += score;
     localStorage.setItem("userScore", intScore);
     score = 1
+    scoreText.innerHTML = "Score: 0"
   }
   console.log(countryCount)
 }

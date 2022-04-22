@@ -277,9 +277,18 @@ a{
 /* How to Play */
 
 #howToPlayBody{
-    background: linear-gradient(to right, blue, darkblue);
+    background: linear-gradient(90deg, rgb(39, 131, 93), rgb(32, 110, 161));
     display: block;
     text-align: left;
+}
+
+#howToPlayBody legend{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#howToPlayBody h2{
+    font-weight: normal;
 }
 
 #howToPlayBody p{

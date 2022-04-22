@@ -217,6 +217,7 @@ function updateCountry(){
   randomIndex = Math.floor(Math.random() * countryCount);
   let randCountry = Object.keys(countryDictionary)[randomIndex];
   heading.innerHTML = `Name the capital of ${randCountry}`;
+  guessBtn.blur()
     if (score == 10){
       heading.innerHTML = "You Won";
       guessBtn.innerHTML = "Play Again";
@@ -225,6 +226,7 @@ function updateCountry(){
       intScore += score;
       localStorage.setItem("userScore", intScore);
       score = 1
+      scoreText.innerHTML = "Score: 0"
     }
 }
 
