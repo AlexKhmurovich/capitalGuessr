@@ -53,6 +53,7 @@ input{
     background: rgb(24, 109, 219);
     display: none;
     color: white;
+    touch-action: none;
 }
 
 input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
