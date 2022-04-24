@@ -7,10 +7,6 @@ body{
     display: flex;
     justify-content: center;
     text-align: center;
-    --level1-bg-img: url(imgs/earth.jpg)no-repeat center center fixed;
-    --level2-bg-img: url(imgs/sun.jpeg)no-repeat center center fixed;
-    --level3-bg-img: url(imgs/mars.jpeg)no-repeat center center fixed;
-    --level4-bg-img: linear-gradient(to right, #6a3093, #a044ff);;
 }
 
 body a{
@@ -103,7 +99,7 @@ body input:focus, body button:focus{
 }
 
 #l2Body{
-    background: var(--level2-bg-img);
+    background: url(imgs/sun.jpeg)no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -158,7 +154,7 @@ body input:focus, body button:focus{
 }
 
 #l3Body{
-    background: var(--level3-bg-img);
+    background: url(imgs/mars.jpeg)no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -213,7 +209,7 @@ body input:focus, body button:focus{
 }
 
 #l4Body{
-    background: var(--level4-bg-img);
+    background: linear-gradient(to right, #6a3093, #a044ff);
     background-size: cover;
 }
 
