@@ -54,6 +54,7 @@ input{
     display: none;
     color: white;
     touch-action: none;
+    margin-top: 20px;
 }
 
 input::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -92,10 +93,6 @@ button:hover{
 body input:focus, body button:focus{
     outline: none;
     border: 5px solid rgb(86, 139, 255);
-}
-
-input{
-    margin-top: 20px;
 }
 
 /* Level 2 */
@@ -309,7 +306,7 @@ a{
     #howToPlay{
         display: none;
     }
-    input{
-        width: 250px;
+    input, #l2Body input, #l3Body input, #l4Body input{
+        width: 280px;
     }
 }
