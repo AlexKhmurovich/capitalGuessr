@@ -1,135 +1,137 @@
-body{
-    background: url(imgs/earth.jpg)no-repeat center center fixed;
-    background-size: 1920px 1080px;
-    background-repeat: no-repeat;
-    font-family: 'Montserrat', cursive;
-    /* display: flex;
+body {
+  background: url(imgs/earth.jpg) no-repeat center center fixed;
+  background-size: 1920px 1080px;
+  background-repeat: no-repeat;
+  font-family: "Montserrat", cursive;
+  /* display: flex;
     justify-content: center;
     align-items: center; */
-    text-align: center;
-    font-weight: bold;
-    overflow-x: hidden;
+  text-align: center;
+  font-weight: bold;
+  overflow-x: hidden;
 }
 
-h1, h2{
-    color: white;  
+h1,
+h2 {
+  color: white;
 }
 
-img{
-    width: 200px;
-    height: 200px;
-    transition: 0.5s;
-    margin: 20px 20px 0 20px;
+img {
+  width: 200px;
+  height: 200px;
+  transition: 0.5s;
+  margin: 20px 20px 0 20px;
 }
 
-
-#img1:hover{
-    filter: drop-shadow(0 0 20px blue);
-    border-radius: 50px;
-    cursor: pointer;
+#img1:hover {
+  filter: drop-shadow(0 0 20px blue);
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-#img2:hover{
-    filter: drop-shadow(0 0 20px rgb(255, 136, 0));
-    border-radius: 50px;
-    cursor: pointer;
+#img2:hover {
+  filter: drop-shadow(0 0 20px rgb(255, 136, 0));
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-#img3:hover{
-    filter: drop-shadow(0 0 20px rgb(255, 0, 0));
-    border-radius: 50px;
-    cursor: pointer;
+#img3:hover {
+  filter: drop-shadow(0 0 20px rgb(255, 0, 0));
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-#img4:hover{
-    filter: drop-shadow(0 0 20px rgb(98, 0, 255));
-    border-radius: 50px;
-    cursor: pointer;
+#img4:hover {
+  filter: drop-shadow(0 0 20px rgb(98, 0, 255));
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-h2{
-    padding: 10px;
-    font-size: 20px;
-    margin: 0;
+h2 {
+  padding: 10px;
+  font-size: 20px;
+  margin: 0;
 }
 
-#h2l1{
-    color: rgb(114, 171, 255);
+#h2l1 {
+  color: rgb(114, 171, 255);
 }
 
-#h2l2{
-    color: rgb(243,169,22);
+#h2l2 {
+  color: rgb(243, 169, 22);
 }
 
-#h2l3{
-    color: rgb(170,32,32);
+#h2l3 {
+  color: rgb(170, 32, 32);
 }
 
-#h2l4{
-    color: rgb(119, 33, 216);
+#h2l4 {
+  color: rgb(119, 33, 216);
 }
 
-iframe{
-    margin-top: 100px;
+iframe {
+  margin-top: 100px;
 }
 
-#practiceBody h1, #practiceBody h2{
-    color: white;
+#practiceBody h1,
+#practiceBody h2 {
+  color: white;
 }
 
-#practiceMode a, #practiceMode{
-    color: white;
-    text-shadow: 0 0 10px black;
+#practiceMode a,
+#practiceMode {
+  color: white;
+  text-shadow: 0 0 10px black;
 }
 
-#practiceBody a{
-    display: block;
-    color: white;
+#practiceBody a {
+  display: block;
+  color: white;
 }
 
-#howToPlayA{
-    color: white;
-    text-shadow: 0 0 10px black;
+#howToPlayA {
+  color: white;
+  text-shadow: 0 0 10px black;
 }
 
-@media screen and (max-width: 925px){
-    h1{
-        font-size: 30px;
-    }
-    .container{
-        flex-direction: column;
-    }
-    h2{
-        /* text-decoration: underline;
+@media screen and (max-width: 925px) {
+  h1 {
+    font-size: 30px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  h2 {
+    /* text-decoration: underline;
         margin: 0; */
-        display: none;
-    }
-    #practiceMode{
-        display: block;
-    }
-    body{
-        background: url('imgs/earth.jpg');
-    }
-    img{
-        width: 170px;
-        height: 170px;
-        margin: 15px;
-    }
-    #practiceBody h2{
-        display: block;
-    }
-    iframe{
-        width: 300px;
-        height: 700px;
-        margin-top: 15px;
-    }
-    #pointsEarned{
-        display: block;
-    }
+    display: none;
+  }
+  #practiceMode {
+    display: block;
+  }
+  body {
+    background: url("imgs/earth.jpg");
+  }
+  img {
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+  }
+  #practiceBody h2 {
+    display: block;
+  }
+  iframe {
+    width: 300px;
+    height: 700px;
+    margin-top: 15px;
+  }
+  #pointsEarned {
+    display: block;
+  }
 }

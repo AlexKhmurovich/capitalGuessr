@@ -91,6 +91,23 @@ body input:focus, body button:focus{
     border: 5px solid rgb(86, 139, 255);
 }
 
+#guessBtn{
+    display: none;
+}
+
+#scoreh1{
+    font-size: 30px;
+}
+
+#attempth2{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#randCountryText{
+    color: rgb(67, 121, 202);
+}
+
 /* Level 2 */
 
 #l2Body #h1{
