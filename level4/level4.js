@@ -25,7 +25,7 @@ startBtn.onclick = function () {
    startBtn.style.display = "none";
    guessBtn.style.display = "inline";
    textBox.style.display = "inline";
-   scoreText.innerHTML = `Score: ${score}`;
+   scoreText.innerHTML = `Score: 0`;
    attemptsText.innerHTML = `Attempts: ${attempts}/7`;
    collectList();
    getRandomCountry();
