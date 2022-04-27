@@ -7,7 +7,7 @@ let attemptsText = document.getElementById("attempth2");
 let wheel = document.getElementById("wheel");
 let randCountry = "";
 let randCapital = "";
-let score = 1;
+let score = 0;
 let countriesLevel = {};
 let attempts = 0;
 var rot = 360;
@@ -25,7 +25,7 @@ startBtn.onclick = function () {
    startBtn.style.display = "none";
    guessBtn.style.display = "inline";
    textBox.style.display = "inline";
-   scoreText.innerHTML = `Score: 0`;
+   scoreText.innerHTML = `Score: ${score}`;
    attemptsText.innerHTML = `Attempts: ${attempts}/7`;
    collectList();
    getRandomCountry();
@@ -141,7 +141,7 @@ function userLost(){
 function maxAttemptsReached() {
    heading.innerHTML = "Max Number of Attempts Reached";
    startBtn.innerHTML = "Play Again";
-   heading.style.color = "red";
+   heading.style.color = "pink";
    heading.style.setProperty("filter", "drop-shadow(0 0 20px red)");
    textBox.style.display = "none";
    guessBtn.style.display = "none";
