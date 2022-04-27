@@ -1,263 +1,120 @@
 let heading = document.getElementById("h1");
 let textBox = document.getElementById("txtBox");
 let scoreText = document.getElementById("scoreh1");
-let guessBtn = document.getElementById("guess");
-let modal = document.getElementById("modal");
-let presentModal = document.getElementById("howToPlay");
-let closeModal = document.getElementById("closeModal");
-let timeText = document.getElementById("timeLeft");
+let guessBtn = document.getElementById("guessBtn");
+let startBtn = document.getElementById("startBtn");
+let attemptsText = document.getElementById("attempth2");
+let audio = new Audio("../music/level3.mp3");
+audio.loop = true;
+let randCountry = "";
+let randCapital = "";
 let score = 0;
-let randomIndex = 0;
-let audio = new Audio("../music/level3.mp3")
-audio.loop = true
+let countriesLevel = {};
+let attempts = 0;
 
-
-
-guessBtn.innerHTML = "Start"
-
-let countryDictionary = {
-  //// "Afghanistan": "Kabul",
-  //// "Albania": "Tirana",
-  //// "Algeria": "Algiers",
-  "Andorra": "Andorra la Vella",
-  "Angola": "Luanda",
-  "Antigua and Barbuda": "Saint John's",
-  //// "Argentina": "Buenos Aires",
-  //// "Armenia": "Yerevan",
-  //// "Australia": "Canberra",
-  //// "Austria": "Vienna",
-  //// "Azerbaijan": "Baku",
-  "Bahamas": "Nassau",
-  "Bahrain": "Manama",
-  "Bangladesh": "Dhaka",
-  "Barbados": "Bridgetown",
-  ////"Belarus": "Minsk",
-  ////"Belgium": "Brussels",
-  "Belize": "Belmopan",
-  "Benin": "Porto-Novo",
-  "Bhutan": "Thimphu",
-  "Bolivia": "Sucre",
-  ////"Bosnia and Herzegovina": "Sarajevo",
-  "Botswana": "Gaborone",
-  ////"Brazil": "Brasilia",
-  "Brunei": "Bandar Seri Begawan",
-  ////"Bulgaria": "Sofia",
-  "Burkina Faso": "Ouagadougou",
-  "Burundi": "Gitega",
-  "Cote d'Ivoire": "Yamoussoukro",
-  "Cambodia": "Phnom Penh",
-  "Cameroon": "Yaounde",
-  ////"Canada": "Ottawa",
-  "Central African Republic": "Bangui",
-  "Chad": "N'Djamena",
-  "Chile": "Santiago",
-////"China": "Beijing",
-  "Colombia": "Bogota",
-  "Comoros": "Moroni",
-  ////"Costa Rica": "San Jose",
-  ////"Croatia": "Zagreb",
-  ////"Cuba": "Havana",
-  "Cyprus": "Nicosia",
-  ////"Czech Republic": "Prague",
-  "Democratic Republic of the Congo": "Kinshasa",
-  ////"Denmark": "Copenhagen",
-  "Djibouti": "Djibouti",
-  "Dominica": "Roseau",
-  "Dominican Republic": "Santo Domingo",
-  "Ecuador":	"Quito",
-  ////"Egypt":	"Cairo",
-  "El Salvador":	"San Salvador",
-  "Eritrea":	"Asmara",
-  "Estonia":	"Tallinn",
-  "Ethiopia": "Addis Ababa",
-  "Fiji": "Suva",
-  ////"Finland":	"Helsinki",
-  ////"France":	"Paris",
-  "Gabon":	"Libreville",
-  "Gambia":	"Banjul",
-  //// "Georgia":	"Tbilisi",
-  ////"Germany":	"Berlin",
-  "Ghana":	"Accra",
-  ////"Greece":	"Athens",
-  "Grenada":	"Saint George's",
-  "Greenland": "Nuuk",
-  ////"Guatemala":	"Guatemala City",
-  "Guinea":	"Conakry",
-  "Guinea-Bissau": "Bissau",
-  "Guyana":	"Georgetown",
-  "Haiti":	"Port-au-Prince",
-  "Honduras":	"Tegucigalpa",
-  ////"Hungary":	"Budapest",
-  ////"Iceland":	"Reykjavik",
-  ////"India":	"New Delhi",
-  "Indonesia":	"Jakarta",
-  "Iran":	"Tehran",
-  "Iraq":	"Baghdad",
-  ////"Ireland":	"Dublin",
-  ////"Israel":	"Jerusalem",
-  ////"Italy":	"Rome",
-  ////"Jamaica":	"Kingston",
-  ////"Japan":	"Tokyo",
-  "Jordan":	"Amman",
-  //// "Kazakhstan":	"Nur-Sultan",
-  "Kenya":	"Nairobi",
-  "Kiribati":	"Tarawa",
-  "Kosovo":	"Pristina",
-  "Kuwait":	"Kuwait City",
-  ////"Kyrgyzstan":	"Bishkek",
-  "Laos":	"Vientiane",
-  ////"Latvia":	"Riga",
-  "Lebanon":	"Beirut",
-  "Lesotho":	"Maseru",
-  "Liberia":	"Monrovia",
-  "Libya":	"Tripoli",
-  "Liechtenstein":	"Vaduz",
-  ////"Lithuania":	"Vilnius",
-  ////"Luxembourg":	"Luxembourg",
-  "Madagascar":	"Antananarivo",
-  "Malawi":	"Lilongwe",
-  "Malaysia":	"Kuala Lumpur",
-  "Maldives":	"Male",
-  "Mali":	"Bamako",
-  "Malta":	"Valletta",
-  "Marshall Islands": "Majuro",
-  "Mauritania":	"Nouakchott",
-  "Mauritius":	"Port Louis",
-  ////"Mexico":	"Mexico City",
-  "Micronesia":	"Palikir",
-  "Moldova":	"Chisinau",
-  ////"Monaco":	"Monaco",
-  "Mongolia":	"Ulaanbaatar",
-  "Montenegro":	"Podgorica",
-  "Morocco":	"Rabat",
-  "Mozambique":	"Maputo",
-  "Myanmar":	"Naypyidaw",
-  "Namibia":	"Windhoek",
-  "Nauru":	"Yaren District",
-  "Nepal":	"Kathmandu",
-  ////"Netherlands":	"Amsterdam",
-  ////"New Zealand": "Wellington",
-  "Nicaragua":	"Managua",
-  "Niger":	"Niamey",
-  "Nigeria":	"Abuja",
-  ////"North Korea":	"Pyongyang",
-  "North Macedonia": "Skopje",
-  ////"Norway":	"Oslo",
-  "Oman":	"Muscat",
-  "Pakistan":	"Islamabad",
-  "Palau":	"Ngerulmud",
-  "Palestine":	"Jerusalem",
-  //// "Panama":	"Panama City",
-  "Papua New Guinea": "Moresby",
-  "Paraguay":	"Asunción",
-  ////"Peru":	"Lima", 
-  "Philippines":	"Manila",
-  ////"Poland":	"Warsaw",
-  ////"Portugal":	"Lisbon",
-  "Qatar":	"Doha",
-  ////"Romania":	"Bucharest",
-  ////"Russia":	"Moscow",
-  "Rwanda":	"Kigali",
-  "Saint Kitts and Nevis":	"Basseterre",
-  "Saint Lucia": "Castries",
-  "Saint Vincent and the Grenadines":	"Kingstown",
-  "Samoa":	"Apia",
-  ////"San Marino":	"San Marino",
-  "Sao Tome and Principe": "Sao Tome",
-  "Saudi Arabia": "Riyadh",
-  "Senegal":	"Dakar",
-  "Serbia":	"Belgrade",
-  "Seychelles":	"Victoria",
-  "Sierra Leone": "Freetown",
-  ////"Singapore":	"Singapore",
-  "Slovakia":	"Bratislava",
-  "Slovenia":	"Ljubljana",
-  "Solomon Islands": "Honiara",
-  "Somalia":	"Mogadishu",
-  ////"South Africa": "Cape Town",
-  ////"South Korea":	"Seoul",
-  "South Sudan":	"Juba",
-  ////"Spain":	"Madrid",
-  "Sri Lanka": "Sri Jayawardenepura Kotte",
-  "Sudan":	"Khartoum",
-  "Suriname":	"Paramaribo",
-  ////"Sweden":	"Stockholm",
-  ////"Switzerland":	"Bern",
-  "Syria":	"Damascus",
-  "Taiwan":	"Taipei",
-  ////"Tajikistan":	"Dushanbe",
-  "Tanzania":	"Dodoma",
-  ////"Thailand":	"Bangkok",
-  "Timor-Leste": "Dili",
-  "Togo":	"Lomé",
-  "Tonga":	"Nuku'alofa",
-  "Trinidad and Tobago":	"Port of Spain",
-  ////"Tunisia":	"Tunis",
-  ////"Turkey":	"Ankara",
-  ////"Turkmenistan":	"Ashgabat",
-  "Tuvalu":	"Funafuti",
-  "Uganda":	"Kampala",
-  ////"Ukraine":	"Kyiv",
-  ////"United Arab Emirates":	"Abu Dhabi",
-  ////"United Kingdom": "London",
-  ////"United States of America": "Washington, D.C.",
-  //// "Uruguay":	"Montevideo",
-  //// "Uzbekistan":	"Tashkent",
-  "Vanuatu":	"Port Vila",
-  ////"Vatican City":	"Vatican City",
-  "Venezuela":	"Caracas",
-  "Vietnam":	"Hanoi",
-  "Yemen":	"Sana'a",
-  "Zambia":	"Lusaka",
-  "Zimbabwe":	"Harare"
+startBtn.onclick = function () {
+   audio.play();
+   startBtn.style.display = "none";
+   guessBtn.style.display = "inline";
+   textBox.style.display = "inline";
+   scoreText.innerHTML = `Score: ${score}`;
+   attemptsText.innerHTML = `Attempts: ${attempts}/7`;
+   collectList(3);
+   getRandomCountry();
+   setHeading();
 };
 
-function updateCountry(){
-  let countryCount = 0;
-  for (let k in countryDictionary) if (countryDictionary.hasOwnProperty(k)) countryCount++;
-  randomIndex = Math.floor(Math.random() * countryCount);
-  let randCountry = Object.keys(countryDictionary)[randomIndex];
-  heading.innerHTML = `Name the capital of ${randCountry}`;
-  if (score == 5){
-    heading.innerHTML = "You Won";
-    guessBtn.innerHTML = "Play Again";
-    textBox.style.display = "none";
-    let intScore = parseInt(localStorage.userScore);
-    intScore += score;
-    localStorage.setItem("userScore", intScore);
-    score = 1
-    scoreText.innerHTML = "Score: 0"
-  }
-  console.log(countryCount)
+guessBtn.onclick = function () {
+   let userAnswerCap = textBox.value.toUpperCase();
+   if (userAnswerCap == randCapital) {
+      score++;
+      attempts++;
+      attemptsText.innerHTML = `Attempt: ${attempts}/7`;
+      scoreText.innerHTML = `Score: ${score}`;
+      getRandomCountry();
+      setHeading();
+      textBox.value = "";
+      guessBtn.innerHTML = "Guess";
+   } else if (userAnswerCap != randCapital && attempts == 6) {
+      attempts++;
+      attemptsText.innerHTML = `Attempt: ${attempts}/7`;
+      scoreText.innerHTML = `Score: ${score}`;
+      maxAttemptsReached();
+   } else if (userAnswerCap != randCapital && attempts < 6) {
+      attempts++;
+      attemptsText.innerHTML = `Attempt: ${attempts}/7`;
+      showCorrectAnswer();
+      guessBtn.innerHTML = "Try Again";
+      textBox.value = "";
+      textBox.style.display = "none";
+      getRandomCountry();
+      guessBtn.style.display = "none";
+      setTimeout(function () {
+         setHeading();
+      }, 900);
+   }
+   if (score == 5) {
+      userWon();
+   } else if (attempts == 7) {
+      clearTimeout();
+      maxAttemptsReached();
+   }
+};
+
+function getRandomCountry() {
+   let keys = Object.keys(countriesLevel);
+   randCountry = keys[Math.floor(Math.random() * keys.length)];
+   randCapital = countriesLevel[randCountry];
+   let randCountryWithCapital = {};
+   randCountryWithCapital[randCountry] = randCapital;
+   console.log(randCountryWithCapital)
+   return randCountryWithCapital;
 }
 
-function triggerAction(){
-  textBox.style.display = "inline";
-  guessBtn.innerHTML = "Guess";
-  let correctAnswer = countryDictionary[Object.keys(countryDictionary)[randomIndex]];
-  let userAnswerCap = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1);
-  if (userAnswerCap == correctAnswer){
-    score ++
-    scoreText.innerHTML = `Score: ${score}`
-    textBox.value = ""
-    updateCountry()
-  } else{
-    scoreText.innerHTML = `Score: ${score}`
-    textBox.value = ""
-    updateCountry()
-  }
+function collectList(level) {
+   countriesLevel = {};
+   let numberOfCountries = countries.length;
+   for (i = 0; i < numberOfCountries; i++) {
+      if (countries[i].level == level) {
+         countriesLevel[countries[i].country] = countries[i].capital;
+      }
+   }
 }
 
-guessBtn.onclick = function(){
-  triggerAction()
-  audio.play()
+function showCorrectAnswer() {
+   heading.innerHTML = `Correct Answer: ${randCapital}`;
+   heading.style.color = "red";
+   heading.style.setProperty("filter", "drop-shadow(0 0 20px red)");
 }
 
+function setHeading() {
+   heading.innerHTML =
+      "NAME THE CAPITAL OF " +
+      `<span id="randCountryText">${randCountry}<span>`;
+   heading.style.color = "white";
+   heading.style.setProperty("filter", "drop-shadow(0 0 20px red)");
+   textBox.style.display = "inline";
+   guessBtn.style.display = "inline";
+}
 
-document.addEventListener("keyup", function(event) {
-  if (event.key === "Enter") {
-    console.log("enter pressed")
-    triggerAction()
-    audio.play()
-  }
-});
+function userWon() {
+   heading.innerHTML = "You Won";
+   textBox.style.display = "none";
+   guessBtn.style.display = "none";
+   startBtn.style.display = "inline";
+   startBtn.innerHTML = "Play Again";
+   score = 0;
+   attempts = 0;
+}
+
+function maxAttemptsReached() {
+   heading.innerHTML = "Max Number of Attempts Reached";
+   startBtn.innerHTML = "Play Again";
+   heading.style.color = "red";
+   heading.style.setProperty("filter", "drop-shadow(0 0 20px red)");
+   textBox.style.display = "none";
+   guessBtn.style.display = "none";
+   startBtn.style.display = "inline";
+   score = 0;
+   attempts = 0;
+}

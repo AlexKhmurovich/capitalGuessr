@@ -461,7 +461,7 @@ let countries = [
     },
     {
         "country": "ICELAND",
-        "capital": "REYKJAVÍK",
+        "capital": "REYKJAVIK",
         "level": "1" 
     },
     {

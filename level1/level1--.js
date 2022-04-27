@@ -1,3 +1,5 @@
+
+
 let heading = document.getElementById("h1");
 let textBox = document.getElementById("txtBox");
 let scoreText = document.getElementById("scoreh1");
@@ -8,11 +10,6 @@ let audio = new Audio("../music/level1.mp3")
 audio.loop = true
 
 
-
-let data = fetch('CountryList.js')
-console.log(data)
-
-guessBtn.innerHTML = "Start";
 
 let countryDictionary = {
   // "AFGHANISTAN": "KABUL",

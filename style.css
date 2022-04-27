@@ -163,6 +163,10 @@ body input:focus, body button:focus{
     background: linear-gradient(to right, #fc4a1a, #f7b733);
 }
 
+#l2Body #randCountryText{
+    color: rgb(231, 216, 79);
+}
+
 /* Level 3 */
 
 #l3Body #h1{
@@ -216,6 +220,10 @@ body input:focus, body button:focus{
 
 #l3Body #modal{
     background: linear-gradient(to right, #ed213a, #93291e);
+}
+
+#l3Body #randCountryText{
+    color: rgb(231, 79, 79);
 }
 
 /* Level 4 */
@@ -283,6 +291,10 @@ img{
 
 a{
     clip-path: (0% 100%, 50% 0%, 100% 100%);
+}
+
+#l4Body #randCountryText{
+    color: rgb(207, 115, 243);
 }
 
 /* How to Play */
